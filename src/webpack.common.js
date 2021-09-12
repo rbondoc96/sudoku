@@ -25,7 +25,7 @@ module.exports = {
                     }
                 ],
             },{
-                test: /\.(pdf|png|svg|jpg|gif|ico|woff|woff2)$/,
+                test: /\.(pdf|ico|woff|woff2)$/,
                 use: [
                     {
                         loader: "file-loader",
@@ -35,8 +35,18 @@ module.exports = {
                         }
                     },
                 ],
-            },
-            {
+            },{
+                test: /\.(png|svg|jpg|gif)$/,
+                use: [
+                    {
+                        loader: "file-loader",
+                        options: {
+                            name: "./imgs/[name].[ext]",
+                            outputPath: "assets",
+                        }
+                    },
+                ]
+            },{
                 test: /\.(woff|woff2)$/,
                 use: {
                     loader: "url-loader",
@@ -45,7 +55,10 @@ module.exports = {
         ],
     },
     resolve: {
-        extensions: [".tsx", ".ts", ".js"]
+        extensions: [".tsx", ".ts", ".js"],
+        fallback: {
+            fs: false
+        }
     },
     plugins: [
         new HtmlWebpackPlugin({

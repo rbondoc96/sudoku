@@ -9,14 +9,15 @@
       "removeComments": true,
       "moduleResolution": "node",
       "esModuleInterop": true,
-      "lib": ["es6", "DOM"],
+      "lib": ["es6", "DOM", "es2017"],
       "allowJs": true,
-      "forceConsistentCasingInFileNames": true,
+      "forceConsistentCasingInFileNames": true
     },
     "include": [
       "**.ts",
       "./*/**.ts", 
-      "api"    
+      "api",
+      "./public/**/*"    
     ],
     "exclude": [
       "node_modules"

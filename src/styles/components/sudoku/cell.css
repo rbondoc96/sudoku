@@ -1,0 +1,95 @@
+:root {
+    --color-border-cell: rgb(0, 0, 0);
+
+    --color-text-cell: rgb(0, 0, 0);
+    --color-text-cell-static: rgb(255, 255, 255);
+    --color-text-cell-focus: rgb(255, 255, 255);
+
+    --color-bg-cell: rgb(255, 255, 255);
+    --color-bg-cell-static: rgb(16, 76, 160);
+
+    /* --color-bg-cell-neighbor: rgb(211, 211, 211); */
+    --color-bg-cell-neighbor: rgb(255, 208, 154);
+    --color-bg-cell-hover: rgb(141, 218, 248);
+    --color-bg-cell-focus: rgb(141, 218, 248);
+    --color-bg-cell-hint: rgb(255, 193, 100);
+
+    --width-cell-border: 2.5px;
+    --width-cell: calc(2.85vw + 2.25vh);
+
+    --fontSize-cell: calc(1.2em + 0.5vw);
+}
+
+.sudoku-grid-cell {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+    width: var(--width-cell);
+    max-width: 50px;
+    height: var(--width-cell);
+    max-height: 50px;
+
+    border: var(--width-cell-border) solid var(--color-border-cell);
+    background-color: var(--color-bg-cell);
+}
+.sudoku-grid-cell input {
+    font-family: "Poppins", sans-serif;
+    font-size: var(--fontSize-cell);
+    font-weight: 800;
+}
+.sudoku-grid-cell.sudoku-grid-cell--static {
+    cursor: default;
+    user-select: none;
+    background-color: var(--color-bg-cell-static) !important;
+    color: var(--color-text-cell-static);
+}
+.sudoku-grid-cell.sudoku-grid-cell--neighbor {
+    background-color: var(--color-bg-cell-neighbor);
+}
+.sudoku-grid-cell.sudoku-grid-cell--hint {
+    background-color: var(--color-bg-cell-hint);
+}
+
+.sudoku-grid-cell-input {
+    height: 100%;
+    width: 100%;
+
+    background-color: transparent;
+    border: 0;
+    text-align: center;
+
+    font-size: calc(0.9em + 0.2vw);
+}
+.sudoku-grid-cell-input:disabled {
+    color: var(--color-text-cell-static);
+}
+.sudoku-grid-cell-input:enabled {
+    color: var(--color-text-cell);
+    transition: 0.3s background-color;
+}
+.sudoku-grid-cell-input:hover:enabled {
+    transition: 0.3s background-color;
+    background-color: var(--color-bg-cell-hover);
+    color: var(--color-text-cell-focus);
+}
+.sudoku-grid-cell-input:focus {
+    outline-width: 3px;
+    outline-color: #000;
+    transition: 0.3s background-color;
+    background-color: var(--color-bg-cell-focus);
+    color: var(--color-text-cell-focus);
+}
+
+/* START -- Removing arrows from input[type=number] */
+/* Chrome, Safari, Edge, Opera */
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+/* Firefox */
+input[type="number"] {
+    -moz-appearance: textfield;
+}
+/* END */

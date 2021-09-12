@@ -1,15 +1,12 @@
-import React from "react"
-import ReactDOM from "react-dom"
+import React from "react";
+import ReactDOM from "react-dom";
 
-import {UIProvider} from "./context/UIContext"
+import App from "./app";
 
-import App from "./app"
+document.title = "Sudoku";
 
-document.title = "PERN-tss"
 ReactDOM.render(
     <React.StrictMode>
-        <UIProvider>
-            <App />
-        </UIProvider>
+        <App />
     </React.StrictMode>
-, document.getElementById("root"))
+, document.getElementById("root"));

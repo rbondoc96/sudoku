@@ -1,0 +1,27 @@
+:root {
+    --width-grid-border: 6px;
+}
+
+.sudoku-grid {
+    justify-self: center;
+}
+.sudoku-grid-row:first-child {
+    border-top: var(--width-grid-border) solid #000;
+}
+.sudoku-grid-row:last-child,
+.sudoku-grid-row:nth-child(3),
+.sudoku-grid-row:nth-child(6) {
+    border-bottom: var(--width-grid-border) solid #000;
+}
+.sudoku-grid-row-container {
+    display: flex;
+}
+
+.sudoku-grid-row .sudoku-grid-cell:first-child {
+    border-left: var(--width-grid-border) solid #000;
+}
+.sudoku-grid-row .sudoku-grid-cell:last-child,
+.sudoku-grid-row .sudoku-grid-cell:nth-child(3),
+.sudoku-grid-row .sudoku-grid-cell:nth-child(6) {
+    border-right: var(--width-grid-border) solid #000;
+}

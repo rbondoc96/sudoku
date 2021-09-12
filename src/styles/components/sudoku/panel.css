@@ -1,0 +1,40 @@
+.sudoku-panel-header {
+    text-align: center;
+    font-family: "Poppins", sans-serif;
+}
+.sudoku-panel-header h1 {
+    font-size: calc(2.5rem + 0.5vw);
+}
+.sudoku-panel-form-clues {
+    display: flex;
+    justify-content: center;
+}
+.sudoku-panel-form-clues .textinput-helper {
+    color: #f35656;
+}
+
+.sudoku-panel-buttons-container {
+    display: grid;
+    grid-template-columns: auto auto;
+    row-gap: 0.8em;
+    column-gap: 1em;
+    margin: 2em 0;
+}
+.sudoku-panel-buttons-container .button:first-child,
+.sudoku-panel-buttons-container .button:nth-child(2) {
+    background-color: var(--color-button-primary);
+    color: rgb(226, 226, 226);
+}
+.sudoku-panel-status {
+    position: absolute;
+}
+
+@media only screen and (max-width: 990px) {
+    .sudoku-panel-header h1 {
+        margin: 0.4em auto;
+    }
+    .sudoku-panel-buttons-container {
+        grid-template-columns: none;
+        row-gap: 1.5em;
+    }
+}

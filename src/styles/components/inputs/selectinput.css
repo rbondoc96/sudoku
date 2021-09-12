@@ -1,0 +1,22 @@
+:root {
+    --fontSize-select: calc(0.9em + 0.5vw);
+}
+
+.selectinput label {
+    display: grid;
+    row-gap: 0.3em;
+}
+.selectinput span {
+    text-align: center;
+    font-size: var(--fontSize-select);
+    font-family: "Poppins", sans-serif;
+}
+.selectinput select {
+    text-indent: 50%;
+    cursor: pointer;
+    font-size: var(--fontSize-select);
+    padding: 0.4em;
+    border-radius: 10px;
+    font-family: "Poppins", sans-serif;
+    border: 3px solid #000;
+}
