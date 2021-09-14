@@ -3,7 +3,7 @@
 @import "./cell.css";
 
 :root {
-    --color-bg-sudoku: rgb(228, 228, 228);
+    --color-bg-sudoku: rgb(241, 241, 241);
 }
 
 .sudoku-wrapper {

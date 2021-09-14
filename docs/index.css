@@ -1,0 +1,285 @@
+@import url(https://fonts.googleapis.com/css2?family=Poppins:wght@300;600;700;800&display=swap);
+:root {
+    --color-button-primary: rgb(16, 76, 160);
+    --color-button-primary-hover: rgba(16, 76, 160, 0.15);
+}
+
+.button {
+    cursor: pointer;
+    border-radius: 5px;
+    border: 3px solid var(--color-button-primary);
+
+    padding: 0.8em 1.5em;
+    font-size: calc(0.9em + 0.5vw);
+    font-family: "Poppins", sans-serif;
+    font-weight: 600;
+    color: var(--color-button-primary);
+
+    background-color: transparent;
+    transition: 0.3s background-color;
+}
+.button:hover {
+    background-color: var(--color-button-primary-hover);
+    transition: 0.3s background-color;
+}
+
+@media only screen and (max-width: 990px) {
+    .button {
+        padding: 0.6em 0.4em;
+    }
+}
+:root {
+    --fontSize-select: calc(0.9em + 0.5vw);
+}
+
+.selectinput label {
+    display: grid;
+    row-gap: 0.3em;
+}
+.selectinput span {
+    text-align: center;
+    font-size: var(--fontSize-select);
+    font-family: "Poppins", sans-serif;
+}
+.selectinput select {
+    text-indent: 50%;
+    cursor: pointer;
+    font-size: var(--fontSize-select);
+    padding: 0.4em;
+    border-radius: 10px;
+    font-family: "Poppins", sans-serif;
+    border: 3px solid #000;
+}
+.sudoku-panel-header {
+    text-align: center;
+    font-family: "Poppins", sans-serif;
+}
+.sudoku-panel-header h1 {
+    font-size: calc(2.5rem + 0.5vw);
+}
+.sudoku-panel-form-clues {
+    display: flex;
+    justify-content: center;
+}
+.sudoku-panel-form-clues .textinput-helper {
+    color: #f35656;
+}
+
+.sudoku-panel-buttons-container {
+    display: grid;
+    grid-template-columns: auto auto;
+    row-gap: 0.8em;
+    column-gap: 1em;
+    margin: 2em 0;
+}
+.sudoku-panel-buttons-container .button:first-child,
+.sudoku-panel-buttons-container .button:nth-child(2) {
+    background-color: var(--color-button-primary);
+    color: rgb(226, 226, 226);
+}
+.sudoku-panel-status {
+    position: absolute;
+}
+
+@media only screen and (max-width: 990px) {
+    .sudoku-panel-header h1 {
+        margin: 0.4em auto;
+    }
+    .sudoku-panel-buttons-container {
+        grid-template-columns: none;
+        row-gap: 1.5em;
+    }
+}
+:root {
+    --width-grid-border: 6px;
+}
+
+.sudoku-grid {
+    justify-self: center;
+}
+.sudoku-grid-row:first-child {
+    border-top: var(--width-grid-border) solid #000;
+}
+.sudoku-grid-row:last-child,
+.sudoku-grid-row:nth-child(3),
+.sudoku-grid-row:nth-child(6) {
+    border-bottom: var(--width-grid-border) solid #000;
+}
+.sudoku-grid-row-container {
+    display: flex;
+}
+
+.sudoku-grid-row .sudoku-grid-cell:first-child {
+    border-left: var(--width-grid-border) solid #000;
+}
+.sudoku-grid-row .sudoku-grid-cell:last-child,
+.sudoku-grid-row .sudoku-grid-cell:nth-child(3),
+.sudoku-grid-row .sudoku-grid-cell:nth-child(6) {
+    border-right: var(--width-grid-border) solid #000;
+}
+:root {
+    --color-border-cell: rgb(0, 0, 0);
+
+    --color-text-cell: rgb(0, 0, 0);
+    --color-text-cell-static: rgb(255, 255, 255);
+    --color-text-cell-focus: rgb(255, 255, 255);
+
+    --color-bg-cell: rgb(255, 255, 255);
+    --color-bg-cell-static: rgb(16, 76, 160);
+
+    /* --color-bg-cell-neighbor: rgb(211, 211, 211); */
+    --color-bg-cell-neighbor: rgb(255, 208, 154);
+    --color-bg-cell-hover: rgb(141, 218, 248);
+    --color-bg-cell-focus: rgb(141, 218, 248);
+    --color-bg-cell-hint: rgb(255, 193, 100);
+
+    --width-cell-border: 2.5px;
+    --width-cell: calc(2.85vw + 2.25vh);
+
+    --fontSize-cell: calc(1.2em + 0.5vw);
+}
+
+.sudoku-grid-cell {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+    width: var(--width-cell);
+    max-width: 50px;
+    height: var(--width-cell);
+    max-height: 50px;
+
+    border: var(--width-cell-border) solid var(--color-border-cell);
+    background-color: var(--color-bg-cell);
+}
+.sudoku-grid-cell input {
+    cursor: pointer;
+    font-family: "Poppins", sans-serif;
+    font-size: var(--fontSize-cell);
+    font-weight: 800;
+}
+.sudoku-grid-cell.sudoku-grid-cell--static {
+    cursor: default;
+    user-select: none;
+    background-color: var(--color-bg-cell-static) !important;
+    color: var(--color-text-cell-static);
+}
+.sudoku-grid-cell.sudoku-grid-cell--neighbor {
+    background-color: var(--color-bg-cell-neighbor);
+}
+.sudoku-grid-cell.sudoku-grid-cell--hint {
+    background-color: var(--color-bg-cell-hint);
+}
+
+.sudoku-grid-cell-input {
+    height: 100%;
+    width: 100%;
+
+    background-color: transparent;
+    border: 0;
+    text-align: center;
+
+    font-size: calc(0.9em + 0.2vw);
+}
+.sudoku-grid-cell-input:disabled {
+    color: var(--color-text-cell-static);
+}
+.sudoku-grid-cell-input:enabled {
+    color: var(--color-text-cell);
+    transition: 0.3s background-color;
+}
+.sudoku-grid-cell-input:hover:enabled {
+    transition: 0.3s background-color;
+    background-color: var(--color-bg-cell-hover);
+    color: var(--color-text-cell-focus);
+}
+.sudoku-grid-cell-input:focus {
+    outline: none;
+    transition: 0.3s background-color;
+    background-color: var(--color-bg-cell-focus);
+    color: var(--color-text-cell-focus);
+}
+
+/* START -- Removing arrows from input[type=number] */
+/* Chrome, Safari, Edge, Opera */
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+/* Firefox */
+input[type="number"] {
+    -moz-appearance: textfield;
+}
+/* END */
+:root {
+    --color-bg-sudoku: rgb(241, 241, 241);
+}
+
+.sudoku-wrapper {
+    position: relative;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    z-index: 900;
+}
+
+.sudoku {
+    height: 100%;
+    width: 100%;
+    border-radius: 15px;
+
+    margin: 0 auto;
+
+    display: flex;
+    justify-content: center;
+    background-color: var(--color-bg-sudoku);
+
+}
+
+.sudoku-container {
+    display: grid;
+    grid-auto-flow: column;
+    align-items: center;
+    column-gap: 2em;
+    padding: 3em 2em;
+}
+
+@media only screen and (max-width: 990px) {
+    .sudoku {
+        box-shadow: none;
+    }
+    .sudoku-wrapper {
+        margin: 1.2em auto;
+    }    
+    .sudoku-container {
+        grid-auto-flow: row;
+        padding: 1em;
+    }
+}
+
+:root {
+    --color-bg: rgb(25, 35, 54);
+    /* --color-bg: rgb(10, 31, 71); */
+    --color-text: rgb(0, 0, 0);
+}
+
+body {
+    margin: 0;
+    padding: 0;
+}
+
+#root {
+    width: 100%;
+}
+
+.App {
+    position: relative;
+    min-height: 100vh;
+    background-color: var(--color-bg);
+    color: var(--color-text);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}

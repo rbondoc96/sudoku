@@ -11,7 +11,7 @@ module.exports = merge(common, {
     mode: "production",
     output: {
         filename: '[name]-bundle.js',
-        path: path.resolve(__dirname, "./build"),
+        path: path.resolve(__dirname, "../docs"),
         publicPath: ""     
     },
     optimization: {
@@ -23,7 +23,7 @@ module.exports = merge(common, {
     module: {
         rules: [
             {
-                test: /\.scss$/,
+                test: /\.(sc|c)ss$/,
                 use: [
                     MiniCssExtractPlugin.loader,
                     "css-loader",

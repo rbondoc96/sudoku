@@ -34,6 +34,7 @@
     background-color: var(--color-bg-cell);
 }
 .sudoku-grid-cell input {
+    cursor: pointer;
     font-family: "Poppins", sans-serif;
     font-size: var(--fontSize-cell);
     font-weight: 800;
@@ -74,8 +75,7 @@
     color: var(--color-text-cell-focus);
 }
 .sudoku-grid-cell-input:focus {
-    outline-width: 3px;
-    outline-color: #000;
+    outline: none;
     transition: 0.3s background-color;
     background-color: var(--color-bg-cell-focus);
     color: var(--color-text-cell-focus);

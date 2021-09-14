@@ -1,6 +1,6 @@
 "use strict";
 exports.__esModule = true;
-var sudoku_1 = require("../../sudoku_engine/sudoku");
+var sudoku_1 = require("../sudoku_engine/sudoku");
 var sudoku = new sudoku_1["default"]();
 var game = sudoku.generate();
 var solution = sudoku.getSolution();
