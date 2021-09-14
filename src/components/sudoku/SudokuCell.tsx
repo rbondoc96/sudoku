@@ -125,6 +125,7 @@ export default function SudokuCell(props) {
                 }
                 min={0}
                 max={9}
+                pattern="[0-9]*"
                 value={grid[props.row][props.col]}          
                 className="sudoku-grid-cell-input"
                 disabled={(!props.isEditable || props.inHintGroup) || undefined}
