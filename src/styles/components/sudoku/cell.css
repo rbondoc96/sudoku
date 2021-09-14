@@ -33,12 +33,6 @@
     border: var(--width-cell-border) solid var(--color-border-cell);
     background-color: var(--color-bg-cell);
 }
-.sudoku-grid-cell input {
-    cursor: pointer;
-    font-family: "Poppins", sans-serif;
-    font-size: var(--fontSize-cell);
-    font-weight: 800;
-}
 .sudoku-grid-cell.sudoku-grid-cell--static {
     cursor: default;
     user-select: none;
@@ -53,6 +47,7 @@
 }
 
 .sudoku-grid-cell-input {
+    cursor: pointer;
     height: 100%;
     width: 100%;
 
@@ -60,7 +55,9 @@
     border: 0;
     text-align: center;
 
-    font-size: calc(0.9em + 0.2vw);
+    font-family: "Poppins", sans-serif;
+    font-size: var(--fontSize-cell);
+    font-weight: 800;
 }
 .sudoku-grid-cell-input:disabled {
     color: var(--color-text-cell-static);
@@ -93,3 +90,9 @@ input[type="number"] {
     -moz-appearance: textfield;
 }
 /* END */
+
+@media only screen and (max-width: 990px) {
+    :root {
+        --fontSize-cell: calc(0.8em + 0.5vw);
+    }
+}

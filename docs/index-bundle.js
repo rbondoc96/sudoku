@@ -218,13 +218,10 @@ function SudokuCell(props) {
     var handleBlur = event => {
         setFocusGroups([]);
     };
-    var handleClick = event => {
-        event.currentTarget.select();
-    };
     var handleMEnter = event => {
         let target = event.currentTarget;
         let input = target.querySelector("input");
-        input.setAttribute("type", "text");
+        input.setAttribute("type", "number");
     };
     var handleMLeave = event => {
         let target = event.currentTarget;
@@ -246,7 +243,7 @@ function SudokuCell(props) {
     return (react_1.default.createElement("div", { className: classes.join(" "), id: `sudoku_${props.row}-${props.col}`, onMouseEnter: handleMEnter, onMouseLeave: handleMLeave },
         react_1.default.createElement("input", { type: grid[props.row][props.col] == 0
                 ? "hidden"
-                : "text", maxLength: 2, value: grid[props.row][props.col], className: "sudoku-grid-cell-input", disabled: (!props.isEditable || props.inHintGroup) || undefined, onClick: handleClick, onBlur: (props.isEditable && handleBlur) || undefined, onFocus: (props.isEditable && handleFocus) || undefined, onChange: handleChange })));
+                : "number", min: 0, max: 9, value: grid[props.row][props.col], className: "sudoku-grid-cell-input", disabled: (!props.isEditable || props.inHintGroup) || undefined, onBlur: (props.isEditable && handleBlur) || undefined, onFocus: (props.isEditable && handleFocus) || undefined, onChange: handleChange })));
 }
 exports.default = SudokuCell;
 
